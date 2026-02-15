@@ -2,6 +2,24 @@
 
 デスクトップ上に透過表示されるカレンダー＆メモウィジェットアプリケーション。
 
+## インストール
+
+### ダウンロード（推奨）
+
+[Releases](https://github.com/kamishioya/desktop_calendar/releases) ページから最新の `.exe` インストーラーをダウンロードして実行してください。
+
+### ソースからビルド
+
+```bash
+git clone https://github.com/kamishioya/desktop_calendar.git
+cd desktop_calendar
+npm install
+npm run build
+npm run package
+```
+
+ビルド後、`dist/` フォルダにインストーラーが生成されます。
+
 ## 機能
 
 - 📅 **カレンダー表示** - 月間カレンダーの表示、月ナビゲーション
