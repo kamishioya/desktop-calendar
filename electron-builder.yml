@@ -9,7 +9,6 @@ files:
 win:
   target:
     - nsis
-    - portable
   icon: resources/icon.ico
   signAndEditExecutable: false
 nsis:

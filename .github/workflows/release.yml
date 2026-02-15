@@ -36,14 +36,13 @@ jobs:
         with:
           name: windows-installer
           path: |
-            dist/*.exe
-            dist/*.zip
+            dist/*Setup*.exe
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/*.exe
+            dist/*Setup*.exe
           draft: false
           prerelease: false
           generate_release_notes: true
