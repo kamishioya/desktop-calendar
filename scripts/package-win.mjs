@@ -50,7 +50,9 @@ function buildUnpacked() {
     '--win',
     '--x64',
     '--dir',
-    '--config.win.signAndEditExecutable=false'
+    '--config.win.signAndEditExecutable=false',
+    '--publish',
+    'never'
   ])
 }
 
@@ -68,7 +70,9 @@ function buildInstallersWithRetry() {
         '--x64',
         '--prepackaged',
         'dist/win-unpacked',
-        '--config.win.signAndEditExecutable=false'
+        '--config.win.signAndEditExecutable=false',
+        '--publish',
+        'never'
       ],
       {
         cwd: rootDir,
