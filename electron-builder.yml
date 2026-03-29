@@ -6,6 +6,15 @@ directories:
   output: dist
 files:
   - out/**/*
+extraResources:
+  - from: resources
+    to: .
+    filter:
+      - icon.ico
+      - favicon.ico
+      - favicon-16x16.png
+      - favicon-32x32.png
+      - ms-icon-70x70.png
 win:
   target:
     - nsis

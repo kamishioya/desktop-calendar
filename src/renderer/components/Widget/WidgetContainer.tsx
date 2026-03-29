@@ -5,7 +5,7 @@ import { AppSettings } from '../../../shared/types'
 
 interface WidgetContainerProps {
   settings: AppSettings
-  onUpdateSettings: (settings: Partial<AppSettings>) => void
+  onUpdateSettings: (settings: Partial<AppSettings>) => void | Promise<void>
   children: React.ReactNode
 }
 
@@ -18,7 +18,11 @@ const WidgetContainer: React.FC<WidgetContainerProps> = ({
 
   return (
     <div className="widget-container w-full h-screen flex flex-col">
-      <TitleBar onToggleSettings={() => setShowSettings(!showSettings)} />
+      <TitleBar
+        isPinned={settings.alwaysOnTop}
+        onTogglePin={() => onUpdateSettings({ alwaysOnTop: !settings.alwaysOnTop })}
+        onToggleSettings={() => setShowSettings(!showSettings)}
+      />
       <div className="flex-1 flex flex-col overflow-hidden">
         {children}
       </div>

@@ -11,6 +11,9 @@ let mainWindow: BrowserWindow | null = null
 
 function resolveWindowIcon(): NativeImage | undefined {
   const candidates = [
+    path.join(process.resourcesPath, 'icon.ico'),
+    path.join(process.resourcesPath, 'favicon.ico'),
+    path.join(process.resourcesPath, 'favicon-32x32.png'),
     path.join(process.cwd(), 'resources', 'icon.ico'),
     path.join(process.cwd(), 'resources', 'favicon.ico'),
     path.join(process.cwd(), 'resources', 'favicon-32x32.png'),

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 interface TitleBarProps {
+  isPinned: boolean
+  onTogglePin: () => void | Promise<void>
   onToggleSettings: () => void
 }
 
-const TitleBar: React.FC<TitleBarProps> = ({ onToggleSettings }) => {
-  const [isPinned, setIsPinned] = useState(true)
+const TitleBar: React.FC<TitleBarProps> = ({ isPinned, onTogglePin, onToggleSettings }) => {
 
   const handleMinimize = (): void => {
     if (!window.api?.window) return
@@ -17,10 +18,8 @@ const TitleBar: React.FC<TitleBarProps> = ({ onToggleSettings }) => {
     window.api.window.close()
   }
 
-  const handleTogglePin = async (): Promise<void> => {
-    if (!window.api?.window) return
-    const result = await window.api.window.togglePin()
-    setIsPinned(result)
+  const handleTogglePin = (): void => {
+    void onTogglePin()
   }
 
   return (
